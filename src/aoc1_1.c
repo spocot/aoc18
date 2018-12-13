@@ -7,12 +7,9 @@ int main(int argc, char **argv)
     char *line = NULL;
     size_t size = 0;
     while (getline(&line, &size, stdin) != -1) {
-        int val = atoi(line + 1);
-        if (line[0] == '+') {
-            freq += val;
-        } else {
-            freq -= val;
-        }
+        int val = atoi(line);
+        freq += val;
+
         free(line);
         line = NULL;
     }
