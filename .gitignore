@@ -50,3 +50,9 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Bear and YCM
+compile_commands.json
+
+# Makepp
+.makepp
