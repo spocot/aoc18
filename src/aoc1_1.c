@@ -13,7 +13,8 @@ int main(int argc, char **argv)
         } else {
             freq -= val;
         }
+        free(line);
+        line = NULL;
     }
-    free(line);
     printf("%d\n", freq);
 }
