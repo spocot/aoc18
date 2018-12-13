@@ -1,17 +1,13 @@
 CC=gcc
 CFLAGS += -Wall
 
-MKDIR_P = mkdir -p
-SRC_DIR = src
+EXEC = aoc1 aoc2
 
-DAYS = aoc1
+all: $(EXEC)
 
-SRCS = $(DAYS)_1 $(DAYS)_2
-
-all: $(SRCS)
-
-$(SRCS): %: src/%.c
-	$(CC) $(CFLAGS) -o $@ $<
+aoc%:
+	$(CC) $(CFLAGS) -o $@_1 src/$@_1.c
+	$(CC) $(CFLAGS) -o $@_2 src/$@_2.c
 
 clean:
-	rm -f $(SRCS)
+	rm -f aoc*_*
